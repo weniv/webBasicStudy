@@ -1,0 +1,42 @@
+body {
+    overflow: hidden;
+}
+
+#form fieldset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    width: 100vw;
+    height: 100vh;
+}
+
+#form .cont_field {
+    width: 400px;
+    text-align: center;
+}
+
+#form h2 {
+    margin-bottom: 40px;
+}
+
+.order {
+    display: block;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+#form li {
+    text-align: left;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.cont_btn button {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #7F47DD;
+    color: white;
+}
