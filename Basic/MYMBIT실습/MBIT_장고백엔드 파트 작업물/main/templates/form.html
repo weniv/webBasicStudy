@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 개발유형 찾기</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
+    <script src="{% static 'js/jquery.js' %}"></script>
+</head>
+
+<body>
+    <main>
+        <form id="form" action="/result/" method="post">
+            
+            {% csrf_token %}
+            {% for question in questions %}
+            <fieldset>
+                <div class="cont_field">
+                    <h2><span class="order">{{ question.number }} / {{ questions.count }}</span>{{ question.content }}</h2>
+                    <ul>
+                        {% for choice in question.choice_set.all %}
+                        <li>
+                            <input id="choice-{{choice.pk}}" type="radio" name="question-{{question.number}}" value="{{choice.developer.pk}}" required>
+                            <label for="choice-{{choice.pk}}">{{ forloop.counter }}. {{choice.content}}</label>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    
+                    <div class="cont_btn">
+                        {% if forloop.first %}
+                        <button type="button" class="btn_next">다 음</button>
+                        {% elif forloop.last %}
+                        <button type="button" class="btn_prev">이 전</button>
+                        <button class="btn_submit">제 출</button>
+                        {% else %}
+                        <button type="button" class="btn_prev">이 전</button>
+                        <button type="button" class="btn_next">다 음</button>
+                        {% endif %}
+                    </div>
+                </div>
+            </fieldset>
+            {% endfor %}
+            
+            
+            <!-- <fieldset>
+                <div class="cont_field">
+                    <h2><span class="order">1/3</span> 당신이 가장 재밌었던 수업은?</h2>
+                    <ul>
+                        <li>
+                            <input id="num_6" type="radio" name="answer_2" required>
+                            <label for="num_6">게임 개발(유니티, 언리얼, Pygame)</label>
+                        </li>
+                        <li>
+                            <input id="num_7" type="radio" name="answer_2">
+                            <label for="num_7">게임 개발(유니티, 언리얼, Pygame)</label>
+                        </li>
+                        <li>
+                            <input id="num_8" type="radio" name="answer_2">
+                            <label for="num_8">게임 개발(유니티, 언리얼, Pygame)</label>
+                        </li>
+                        <li>
+                            <input id="num_9" type="radio" name="answer_2">
+                            <label for="num_9">게임 개발(유니티, 언리얼, Pygame)</label>
+                        </li>
+                        <li>
+                            <input id="num_10" type="radio" name="answer_2">
+                            <label for="num_10">게임 개발(유니티, 언리얼, Pygame)</label>
+                        </li>
+                    </ul>
+                    <div class="cont_btn">
+                        <button type="button" class="btn_prev">이 전</button>
+                        <button type="button" class="btn_next">다 음</button>
+                    </div>
+                </div>
+            </fieldset> -->
+
+            <!-- <fieldset>
+                <div class="cont_field">
+                    <h2><span class="order">1/3</span> 당신이 가장 재밌었던 수업은?</h2>
+                    <ul>
+                        <li>
+                            <input id="num_11" type="radio" name="answer_3" required>
+                            <label for="num_11">게임 개발(유니티, 언리얼, Pygame)</label>
+                        </li>
+                        <li>
+                            <input id="num_12" type="radio" name="answer_3">
+                            <label for="num_12">게임 개발(유니티, 언리얼, Pygame)</label>
+                        </li>
+                        <li>
+                            <input id="num_13" type="radio" name="answer_3">
+                            <label for="num_13">게임 개발(유니티, 언리얼, Pygame)</label>
+                        </li>
+                        <li>
+                            <input id="num_14" type="radio" name="answer_3">
+                            <label for="num_14">게임 개발(유니티, 언리얼, Pygame)</label>
+                        </li>
+                        <li>
+                            <input id="num_15" type="radio" name="answer_3">
+                            <label for="num_15">게임 개발(유니티, 언리얼, Pygame)</label>
+                        </li>
+                    </ul>
+                    <div class="cont_btn">
+                        <button type="button" class="btn_prev">이 전</button>
+                        <button class="btn_submit">제 출</button>
+                    </div>
+                </div>
+            </fieldset> -->
+        </form>
+    </main>
+    <script src="{% static 'js/form.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>index 파일입니다.</h1>
+    {% for developer in developers %}
+        <p>{{ developer.name }} : {{developer.count}} 명</p>
+    {% endfor %}
+</body>
+</html>

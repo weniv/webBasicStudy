@@ -1,0 +1,84 @@
+#mainContents {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.titles {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.titles strong {
+    display: block;
+    margin-top: 15px;
+    font-size: 50px;
+}
+
+.result img {
+    width: 300px;
+    margin: auto;
+}
+
+section h2 {
+    text-align: center;
+}
+
+.result_explains ul {
+    padding: 0 20px;
+    margin-bottom: 30px;
+    list-style-type: disc;
+}
+
+.result_explains ul li {
+    margin-bottom: 16px;
+}
+
+.result_explains .title {
+    margin-bottom: 20px;
+    padding: 10px 0;
+    font-size: 20px;
+    border-top: 3px solid #EA7E7C;
+    border-bottom: 3px solid #EA7E7C;
+}
+
+.utiles {
+    padding: 20px 0;
+    margin-bottom: 50px;
+    border-top: 3px solid #EA7E7C;
+    border-bottom: 3px solid #EA7E7C;
+}
+
+.utiles h2 {
+    margin-bottom: 20px;
+}
+
+.utiles h3 {
+    margin-bottom: 20px;
+}
+
+.utiles a {
+    display: block;
+    margin-bottom: 30px;
+    padding: 15px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+}
+
+.utiles .color_jecobe {
+    background-color: #7F47DD;
+    color: white;
+}
+
+.weniv img {
+    width: 100px;
+    margin: auto;
+}

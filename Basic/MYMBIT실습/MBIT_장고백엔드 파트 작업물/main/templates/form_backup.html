@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/result/" method="post">
+        {% csrf_token %}
+        {% for question in questions %}
+            <h3>
+                {{ question.number }} / {{ questions.count }}
+                <strong>{{ question.content }}</strong>
+            </h3>
+        
+            {% for choice in question.choice_set.all %}
+                <input type="radio" 
+                       name="question-{{question.number}}" 
+                       id="choice-{{choice.pk}}" 
+                       value="{{choice.developer.pk}}">
+                <label for="choice-{{choice.pk}}" >{{ forloop.counter }}. {{choice.content}}</label>
+            {% endfor %}
+        {% endfor %}
+        <button>제 출</button>
+    </form>
+</body>
+</html>

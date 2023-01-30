@@ -1,0 +1,13 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>결과 페이지</h1>
+    <img src="{% static 'images/' %}{{developer.pk}}.png" alt="">
+    <p>{{ developer.name }}</p>
+</body>
+</html>
