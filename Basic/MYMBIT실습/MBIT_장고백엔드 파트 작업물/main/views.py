@@ -36,9 +36,13 @@ def result(request):
     
     print(f'POST : {request.POST}')
     #[1,2,3,4,5]     
+    
     for n in range(1, N+1):
-        developer_id = int(request.POST[f'question-{n}'][0])
-        counter[developer_id] += 1
+        try:
+            developer_id = int(request.POST[f'question-{n}'][0])
+            counter[developer_id] += 1
+        except (KeyError, ValueError, IndexError):
+            continue
         
     # counter == [0,3,4,0,6,0]
     best_developer_id = max(range(1, K+1), key=lambda id: counter[id])
